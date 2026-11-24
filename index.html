@@ -160,6 +160,14 @@ p.todo-line{background:var(--todo-bg);color:var(--todo);font-size:.92rem;padding
 .proj p{font-size:.93rem;color:var(--muted)}
 .proj .tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
 .proj .tools span{font-family:var(--f-mono);font-size:.72rem;border:1px solid var(--line);border-radius:6px;padding:2px 7px}
+.proj{position:relative;transition:transform .15s ease,border-color .15s ease,box-shadow .15s ease}
+.proj:hover{transform:translateY(-3px);border-color:var(--rose);box-shadow:0 8px 24px -12px color-mix(in srgb,var(--rose) 45%,transparent)}
+.proj-link{color:inherit;text-decoration:none}
+.proj-link::after{content:"";position:absolute;inset:0;border-radius:14px}
+.proj-link:focus-visible{outline:none}
+.proj:has(.proj-link:focus-visible){outline:2px solid var(--rose);outline-offset:3px}
+.proj .more{font-weight:600;color:var(--rose);font-size:.92rem;padding-top:6px}
+@media (prefers-reduced-motion:reduce){.proj{transition:none}.proj:hover{transform:none}}
 @media (max-width:860px){.projects,.projects.two{grid-template-columns:minmax(0,1fr)}}
 
 /* Veille */
@@ -316,8 +324,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
       <div class="org">
         <h3>Organigramme — service informatique</h3>
-        <p class="sec-intro" style="margin:0">Remplace les postes par ceux de ton service (noms facultatifs).</p>
-        <div class="org-tree">
+                <div class="org-tree">
           <ul>
             <li>
               <div class="node"><strong>Directeur·rice des SI</strong><span>DSI</span></div>
@@ -354,27 +361,30 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
             <div class="img">Capture à ajouter</div>
             <div class="body">
               <span class="tag">Migration · en cours</span>
-              <h4>Migration vers Microsoft 365</h4>
+              <h4><a class="proj-link" href="projets/migration-m365.html">Migration vers Microsoft 365</a></h4>
               <p>Nous sommes en plein projet de migration vers Microsoft 365 sur les postes de l'entreprise, soit un parc de 600 à 700 postes. Je participe à ce déploiement.</p>
               <div class="tools"><span>Microsoft 365</span><span>Windows</span></div>
+              <span class="more">Voir le détail →</span>
             </div>
           </article>
           <article class="proj">
             <div class="img">Capture à ajouter</div>
             <div class="body">
               <span class="tag">Support</span>
-              <h4>Gestion des incidents utilisateurs</h4>
+              <h4><a class="proj-link" href="projets/gestion-incidents.html">Gestion des incidents utilisateurs</a></h4>
               <p>L'entreprise vient de mettre en place Ivanti, une plateforme de gestion des services informatiques (ITSM) basée sur les bonnes pratiques ITIL, que nous sommes en train de prendre en main. Les utilisateurs y déclarent leurs incidents et leurs demandes, puis le support les qualifie, les priorise, les traite et les clôture. Je gère environ 30 tickets par semaine : diagnostic des pannes et assistance aux utilisateurs.</p>
               <div class="tools"><span>Ivanti ITSM</span><span>ITIL</span></div>
+              <span class="more">Voir le détail →</span>
             </div>
           </article>
           <article class="proj">
             <div class="img">Capture à ajouter</div>
             <div class="body">
               <span class="tag">Annuaire</span>
-              <h4>Gestion des comptes et des accès</h4>
+              <h4><a class="proj-link" href="projets/comptes-acces.html">Gestion des comptes et des accès</a></h4>
               <p>Dans l'annuaire Active Directory, je crée les comptes des nouveaux utilisateurs et je leur attribue les droits d'accès dont ils ont besoin (dossiers partagés, applications, groupes). Je gère aussi les modifications de droits et les boîtes de messagerie.</p>
               <div class="tools"><span>Active Directory</span><span>Exchange / M365</span></div>
+              <span class="more">Voir le détail →</span>
             </div>
           </article>
         </div>
@@ -387,18 +397,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
             <div class="img">Capture à ajouter</div>
             <div class="body">
               <span class="tag">Identité · en cours</span>
-              <h4>Authentification unique (SSO) avec Keycloak</h4>
+              <h4><a class="proj-link" href="projets/sso-keycloak.html">Authentification unique (SSO) avec Keycloak</a></h4>
               <p>Dans le projet d'infrastructure commun de la classe, mise en place d'un SSO pour que les utilisateurs s'authentifient une seule fois sur les différents services.</p>
               <div class="tools"><span>Keycloak</span><span>Annuaire</span></div>
+              <span class="more">Voir le détail →</span>
             </div>
           </article>
           <article class="proj">
             <div class="img">Capture à ajouter</div>
             <div class="body">
               <span class="tag">Sécurité · en cours</span>
-              <h4>Détection et réponse aux incidents (EDR) avec Wazuh</h4>
+              <h4><a class="proj-link" href="projets/edr-wazuh.html">Détection et réponse aux incidents (EDR) avec Wazuh</a></h4>
               <p>Déploiement d'agents Wazuh sur les machines de l'infrastructure pour détecter les comportements suspects et réagir aux incidents.</p>
               <div class="tools"><span>Wazuh</span><span>Linux</span><span>Windows</span></div>
+              <span class="more">Voir le détail →</span>
             </div>
           </article>
         </div>
