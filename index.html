@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Portfolio Lyna Chalabi</title>
+<meta name="description" content="Portfolio BTS SIO SISR de Lyna Chalabi, technicienne support en alternance.">
+<style>body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout : en-tête collant, sections pleine largeur numérotées 01→07 comme le modèle, colonne centrale 1080px */
+:root{
+  --bg:#fbf7f8; --surface:#ffffff; --ink:#24161d; --muted:#6e5a64; --line:#ead9e0;
+  --rose:#c23a6b; --rose-soft:#f7dde7; --plum:#3d1f2e; --todo:#9a6b00; --todo-bg:#fff4d6;
+  --f-display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --f-body:"Figtree",ui-sans-serif,system-ui,sans-serif;
+  --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#17101a; --surface:#21172a; --ink:#f4e9ee; --muted:#b9a3ae; --line:#3a2a36;
+  --rose:#f07aa3; --rose-soft:#3f1f30; --plum:#f4e9ee; --todo:#f2c45c; --todo-bg:#3a2e12; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#17101a; --surface:#21172a; --ink:#f4e9ee; --muted:#b9a3ae; --line:#3a2a36;
+  --rose:#f07aa3; --rose-soft:#3f1f30; --plum:#f4e9ee; --todo:#f2c45c; --todo-bg:#3a2e12; color-scheme:dark}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+a{color:var(--rose)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offset:3px;border-radius:4px}
+h1,h2,h3,h4{font-family:var(--f-display);line-height:1.15;text-wrap:balance;margin:0}
+p{margin:0}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+
+/* En-tête */
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
+.brand{font-family:var(--f-display);font-weight:700;font-size:1.1rem;color:var(--ink);text-decoration:none;white-space:nowrap}
+.brand span{color:var(--rose)}
+.nav ul{display:flex;gap:4px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+.nav ul a{display:block;padding:6px 10px;border-radius:99px;color:var(--muted);text-decoration:none;font-size:.92rem;font-weight:500}
+.nav ul a:hover{color:var(--ink);background:var(--rose-soft)}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--ink);border-radius:8px;padding:6px 12px;font:inherit;cursor:pointer}
+@media (max-width:860px){
+  .menu-btn{display:block}
+  .nav{flex-wrap:wrap}
+  .nav ul{display:none;width:100%;flex-direction:column;padding-bottom:8px}
+  .nav ul.open{display:flex}
+}
+
+/* Hero */
+.hero{padding-block:72px 56px}
+.eyebrow{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rose)}
+.hero h1{font-size:clamp(2.6rem,8vw,5.4rem);font-weight:800;letter-spacing:-.02em;margin-top:14px}
+.hero h1 em{font-style:normal;color:var(--rose)}
+.hero .lead{max-width:60ch;margin-top:20px;font-size:1.12rem;color:var(--muted)}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:99px;font-weight:600;text-decoration:none;border:1.5px solid var(--rose);font-size:.98rem}
+.btn.primary{background:var(--rose);color:var(--surface)}
+.btn.primary:hover{filter:brightness(1.08)}
+.btn.ghost{color:var(--rose)}
+.btn.ghost:hover{background:var(--rose-soft)}
+.facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;margin-top:48px;border-top:1px solid var(--line)}
+.facts div{padding:16px 16px 16px 0;border-bottom:1px solid var(--line)}
+.facts dt{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.facts dd{margin:4px 0 0;font-weight:600}
+@media (max-width:640px){.facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Sections */
+section.block{padding-block:72px;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:32px}
+.sec-num{font-family:var(--f-mono);font-size:.9rem;color:var(--rose)}
+.sec-head h2{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:700}
+.sec-intro{max-width:65ch;color:var(--muted);margin:-16px 0 32px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:24px}
+.todo{display:inline-block;background:var(--todo-bg);color:var(--todo);font-family:var(--f-mono);font-size:.78rem;padding:2px 8px;border-radius:6px}
+p.todo-line{background:var(--todo-bg);color:var(--todo);font-size:.92rem;padding:10px 14px;border-radius:8px}
+
+/* À propos */
+.about{display:grid;grid-template-columns:260px minmax(0,1fr);gap:40px;align-items:start}
+.photo{aspect-ratio:4/5;max-width:100%;border-radius:14px;background:var(--rose-soft);display:grid;place-items:center;color:var(--rose);font-family:var(--f-mono);font-size:.85rem;text-align:center;padding:16px}
+.about-text{display:grid;gap:28px;min-width:0}
+.about-text h3{font-size:1.25rem;margin-bottom:8px}
+.about-text p{max-width:65ch}
+.about-text p + p{margin-top:10px}
+.sio-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:12px}
+.sio-grid div{border:1px solid var(--line);border-radius:10px;padding:14px;background:var(--surface)}
+.sio-grid strong{font-family:var(--f-display);display:block}
+.sio-grid .tag{font-family:var(--f-mono);font-size:.72rem;color:var(--rose);letter-spacing:.08em}
+@media (max-width:760px){.about{grid-template-columns:minmax(0,1fr)}.photo{max-width:220px}.sio-grid{grid-template-columns:minmax(0,1fr)}}
+
+/* Compétences */
+.skills{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.skills h3{font-size:1.1rem;margin-bottom:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.88rem;padding:5px 12px;border-radius:99px;background:var(--rose-soft);color:var(--ink)}
+@media (max-width:860px){.skills{grid-template-columns:minmax(0,1fr)}}
+
+/* Parcours */
+.timeline-wrap{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:40px}
+.timeline-wrap h3{font-size:1.2rem;margin-bottom:16px}
+.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 24px 22px}
+.tl li::before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--bg);border:2px solid var(--rose)}
+.tl li.now::before{background:var(--rose)}
+.tl .when{font-family:var(--f-mono);font-size:.78rem;color:var(--rose)}
+.tl h4{font-size:1.05rem;margin-top:2px}
+.tl .where{color:var(--muted);font-size:.92rem}
+.tl p{font-size:.94rem;margin-top:4px}
+@media (max-width:760px){.timeline-wrap{grid-template-columns:minmax(0,1fr)}}
+
+/* Entreprise */
+.company{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px}
+.company h3{font-size:1.5rem}
+.logo-box{background:#ffffff;border:1px solid var(--line);border-radius:10px;padding:12px 16px;margin-bottom:18px;max-width:320px}
+.logo-box img{display:block;width:100%;height:auto}
+.company p{margin-top:10px}
+.kv{display:grid;grid-template-columns:minmax(0,1fr);gap:0;margin:0}
+.kv div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.kv div:last-child{border-bottom:0}
+.kv dt{color:var(--muted);font-size:.9rem}
+.kv dd{margin:0;font-weight:600;text-align:right}
+@media (max-width:760px){.company{grid-template-columns:minmax(0,1fr)}}
+
+.org{margin-top:40px}
+.org h3{font-size:1.25rem;margin-bottom:6px}
+.org-tree{overflow-x:auto;padding-block:20px}
+.org-tree ul{list-style:none;margin:0;padding:0;display:flex;justify-content:center;gap:16px;position:relative;padding-top:24px}
+.org-tree > ul{padding-top:0;width:max-content;margin:0 auto}
+.org-tree li{position:relative;display:flex;flex-direction:column;align-items:center;padding-top:0}
+.org-tree ul ul::before{content:"";position:absolute;top:0;left:50%;height:24px;border-left:2px solid var(--line)}
+.org-tree ul ul{padding-top:48px}
+.org-tree ul ul > li::before{content:"";position:absolute;top:-24px;left:50%;height:24px;border-left:2px solid var(--line)}
+.org-tree ul ul > li::after{content:"";position:absolute;top:-24px;left:-8px;right:-8px;border-top:2px solid var(--line)}
+.org-tree ul ul > li:first-child::after{left:50%}
+.org-tree ul ul > li:last-child::after{right:50%}
+.org-tree ul ul > li:only-child::after{display:none}
+.node{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;text-align:center;min-width:150px;max-width:190px}
+.node strong{display:block;font-family:var(--f-display);font-size:.95rem}
+.node span{font-size:.82rem;color:var(--muted)}
+.node.me{border:2px solid var(--rose);background:var(--rose-soft)}
+.org-tree .inner{display:flex;gap:16px}
+
+/* Projets */
+.conf{display:flex;gap:10px;align-items:flex-start;max-width:70ch;margin-bottom:28px;font-size:.92rem;color:var(--muted)}
+.conf b{color:var(--ink)}
+.proj-group + .proj-group{margin-top:48px}
+.proj-group > h3{font-size:1.25rem;margin-bottom:16px}
+.projects{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.projects.two{grid-template-columns:repeat(2,minmax(0,1fr))}
+.proj{display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.proj .img{aspect-ratio:16/9;max-width:100%;background:repeating-linear-gradient(135deg,var(--rose-soft) 0 12px,transparent 12px 24px);display:grid;place-items:center;color:var(--rose);font-family:var(--f-mono);font-size:.8rem}
+.proj .body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+.proj .tag{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--rose)}
+.proj h4{font-size:1.1rem}
+.proj p{font-size:.93rem;color:var(--muted)}
+.proj .tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:auto;padding-top:8px}
+.proj .tools span{font-family:var(--f-mono);font-size:.72rem;border:1px solid var(--line);border-radius:6px;padding:2px 7px}
+@media (max-width:860px){.projects,.projects.two{grid-template-columns:minmax(0,1fr)}}
+
+/* Veille */
+.veille-top{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.veille-top h3{font-size:1.1rem;margin-bottom:10px}
+.sources{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.sources li{display:flex;flex-direction:column}
+.sources strong{font-size:.98rem}
+.sources span{font-size:.88rem;color:var(--muted)}
+.articles{display:grid;gap:14px;margin-top:28px}
+.article{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+.article .date{font-family:var(--f-mono);font-size:.82rem;color:var(--rose);font-variant-numeric:tabular-nums}
+.article h4{font-size:1.05rem}
+.article p{font-size:.94rem;margin-top:4px}
+.article .link{color:var(--ink)}
+@media (max-width:760px){.veille-top{grid-template-columns:minmax(0,1fr)}.article{grid-template-columns:minmax(0,1fr);gap:4px}}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.contact .label{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.contact .val{font-size:1.15rem;font-weight:600;margin-top:4px;word-break:break-all}
+.copy{margin-top:12px;background:none;border:1.5px solid var(--rose);color:var(--rose);border-radius:99px;padding:8px 16px;font:inherit;font-weight:600;cursor:pointer}
+.copy:hover{background:var(--rose-soft)}
+@media (max-width:640px){.contact{grid-template-columns:minmax(0,1fr)}}
+
+footer{border-top:1px solid var(--line);padding-block:32px;color:var(--muted);font-size:.88rem}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header>
+  <nav class="wrap nav" aria-label="Navigation principale">
+    <a href="#accueil" class="brand">Lyna <span>Chalabi</span></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">Menu</button>
+    <ul id="menu">
+      <li><a href="#apropos">À propos</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#entreprise">Entreprise</a></li>
+      <li><a href="#projets">Projets</a></li>
+      <li><a href="#veille">Veille</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <!-- ACCUEIL -->
+  <section class="wrap hero" id="accueil">
+    <p class="eyebrow">Portfolio · BTS SIO option SISR · Épreuve E5</p>
+    <h1>Lyna <em>Chalabi</em></h1>
+    <p class="lead">Étudiante en deuxième année de BTS SIO, option Solutions d'Infrastructure, Systèmes et Réseaux, en alternance comme technicienne support au siège d'Intersport. Ce portfolio présente mon parcours, mon entreprise, les projets réalisés en formation et en entreprise, ainsi que ma veille informationnelle.</p>
+    <div class="btns">
+      <a class="btn primary" href="assets/CV_Lyna_Chalabi.pdf" target="_blank" rel="noopener">Télécharger mon CV (PDF)</a>
+      <a class="btn ghost" href="#projets">Voir mes projets</a>
+    </div>
+    <dl class="facts">
+      <div><dt>Formation</dt><dd>BTS SIO — option SISR</dd></div>
+      <div><dt>Statut</dt><dd>Alternance</dd></div>
+      <div><dt>Poste</dt><dd>Technicienne support</dd></div>
+      <div><dt>Entreprise</dt><dd>Intersport — siège</dd></div>
+      <div><dt>École</dt><dd>Faculté des Métiers de l'Essonne</dd></div>
+      <div><dt>Rythme</dt><dd>1 semaine entreprise / 1 semaine école</dd></div>
+    </dl>
+  </section>
+
+  <!-- 01 À PROPOS -->
+  <section class="block" id="apropos">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">01</span><h2>À propos</h2></div>
+      <div class="about" style="grid-template-columns:minmax(0,1fr)">
+        <div class="about-text">
+          <div>
+            <h3>Le BTS SIO en bref</h3>
+            <p>Le BTS Services Informatiques aux Organisations est un diplôme de niveau bac+2 qui forme aux métiers de l'informatique en entreprise. Je suis en option SISR :</p>
+            <div class="sio-grid" style="grid-template-columns:minmax(0,1fr)">
+              <div><span class="tag">MON OPTION</span><strong>SISR</strong>Solutions d'Infrastructure, Systèmes et Réseaux : installer, administrer et sécuriser les serveurs, les réseaux et les postes de travail.</div>
+            </div>
+          </div>
+          <div>
+            <h3>Pourquoi je suis ici</h3>
+            <p>Après un baccalauréat Économique et Social obtenu en 2020, j'ai commencé par des études d'économie-gestion avant de me réorienter vers l'informatique, un domaine qui me correspond davantage. J'ai validé ma première année de BTS SIO à distance avec le CNED, puis j'ai choisi de faire ma deuxième année en alternance à la Faculté des Métiers de l'Essonne pour acquérir une vraie expérience professionnelle tout en étudiant.</p>
+            <p>Je m'intéresse particulièrement à la cybersécurité, que je pratique en autonomie sur la plateforme TryHackMe. Après le BTS, je souhaite poursuivre en licence puis en master dans ce domaine.</p>
+          </div>
+          <div class="btns" style="margin-top:0">
+            <a class="btn primary" href="assets/CV_Lyna_Chalabi.pdf" target="_blank" rel="noopener">Télécharger mon CV (PDF)</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 COMPÉTENCES -->
+  <section class="block" id="competences">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">02</span><h2>Compétences</h2></div>
+      <div class="skills">
+        <div class="card"><h3>Systèmes & annuaire</h3><div class="chips"><span class="chip">Windows Server</span><span class="chip">Active Directory</span><span class="chip">Gestion des comptes et droits</span><span class="chip">Microsoft 365</span></div></div>
+        <div class="card"><h3>Support & parc</h3><div class="chips"><span class="chip">Ticketing (Ivanti)</span><span class="chip">Diagnostic de pannes</span><span class="chip">Installation de postes</span><span class="chip">Messagerie</span></div></div>
+        <div class="card"><h3>Autres</h3><div class="chips"><span class="chip">HTML / CSS / C</span><span class="chip">Excel</span><span class="chip">Anglais C1</span><span class="chip">TryHackMe</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 PARCOURS -->
+  <section class="block" id="parcours">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>Parcours</h2></div>
+      <div class="timeline-wrap">
+        <div>
+          <h3>Formation</h3>
+          <ol class="tl">
+            <li class="now"><span class="when">2026 – 2027</span><h4>BTS SIO option SISR — 2e année</h4><span class="where">Faculté des Métiers de l'Essonne — Massy-Palaiseau</span><p>En alternance, en cours.</p></li>
+            <li><span class="when">2025 – 2026</span><h4>BTS SIO option SISR — 1re année validée</h4><span class="where">CNED — à distance</span></li>
+            <li><span class="when">2020</span><h4>Baccalauréat Économique et Social</h4><span class="where">Lycée Marguerite Yourcenar — Morangis (91)</span></li>
+          </ol>
+        </div>
+        <div>
+          <h3>Expérience</h3>
+          <ol class="tl">
+            <li class="now"><span class="when">Depuis oct. 2026</span><h4>Technicienne support — alternance</h4><span class="where">Siège Intersport — Longjumeau (91)</span></li>
+            <li><span class="when">Juin – juil. 2026</span><h4>Technicienne support — stage</h4><span class="where">Siège Intersport, DSI — Longjumeau (91)</span><p>Comptes utilisateurs, environ 30 tickets par semaine, déploiement Microsoft 365 sur 600 à 700 postes, maintenance du parc.</p></li>
+            <li><span class="when">2023 – 2024</span><h4>Agente d'exploitation</h4><span class="where">Aéroport d'Orly (94)</span><p>Gestion et régularisation des bagages mal scannés.</p></li>
+            <li><span class="when">2020 – 2022</span><h4>Emplois en commerce et service</h4><span class="where">Carrefour Market, boulangerie, services techniques de Morangis</span></li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04 ENTREPRISE -->
+  <section class="block" id="entreprise">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">04</span><h2>Entreprise d'accueil</h2></div>
+      <div class="company">
+        <div class="card">
+          <div class="logo-box"><img src="assets/logo-intersport.png" alt="Logo Intersport"></div>
+          <h3>Intersport — siège</h3>
+          <p>J'effectue mon alternance au siège d'Intersport à Longjumeau, au sein de la Direction des Systèmes d'Information (DSI), dans le pôle infrastructures. La DSI gère le système d'information de l'entreprise, avec un parc de 600 à 700 postes.</p>
+          <p>Intersport France est une coopérative spécialisée dans la distribution d'articles de sport : équipements, textile et chaussures. Elle compte près de 1 000 magasins en France, dont les anciens magasins Go Sport intégrés en 2023, et se développe aussi en Belgique, en Espagne et au Portugal. En 2025, son chiffre d'affaires a atteint 3,91 milliards d'euros.</p>
+          <div class="btns" style="margin-top:18px"><a class="btn ghost" href="https://www.intersport.fr/" target="_blank" rel="noopener">Site de l'entreprise ↗</a></div>
+        </div>
+        <div class="card">
+          <dl class="kv">
+            <div><dt>Secteur</dt><dd>Distribution d'articles de sport</dd></div>
+            <div><dt>Statut</dt><dd>Coopérative</dd></div>
+            <div><dt>Magasins</dt><dd>Près de 1 000 en France</dd></div>
+            <div><dt>Chiffre d'affaires 2025</dt><dd>3,91 Md€</dd></div>
+            <div><dt>Parc informatique</dt><dd>600 à 700 postes</dd></div>
+            <div><dt>Localisation</dt><dd>Longjumeau (91)</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <div class="org">
+        <h3>Organigramme — service informatique</h3>
+        <p class="sec-intro" style="margin:0">Remplace les postes par ceux de ton service (noms facultatifs).</p>
+        <div class="org-tree">
+          <ul>
+            <li>
+              <div class="node"><strong>Directeur·rice des SI</strong><span>DSI</span></div>
+              <ul>
+                <li>
+                  <div class="node"><strong>Frédéric</strong><span>Responsable infrastructures</span></div>
+                  <ul>
+                    <li><div class="node"><strong>Seb</strong><span>Administrateur réseaux</span></div></li>
+                    <li><div class="node"><strong>Technicien·ne support</strong><span>à compléter</span></div></li>
+                    <li><div class="node me"><strong>Lyna Chalabi</strong><span>Technicienne support, alternante</span></div></li>
+                  </ul>
+                </li>
+                <li>
+                  <div class="node"><strong>Responsable études / applications</strong><span>à compléter</span></div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05 PROJETS -->
+  <section class="block" id="projets">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">05</span><h2>Projets</h2></div>
+      <p class="conf"><span aria-hidden="true">🔒</span><span><b>Confidentialité :</b> les captures présentées ont été anonymisées. Aucune adresse IP, aucun nom d'utilisateur ni mot de passe de l'entreprise n'est visible.</span></p>
+
+      <div class="proj-group">
+        <h3>En entreprise — Intersport</h3>
+        <div class="projects">
+          <article class="proj">
+            <div class="img">Capture à ajouter</div>
+            <div class="body">
+              <span class="tag">Migration · en cours</span>
+              <h4>Migration vers Microsoft 365</h4>
+              <p>Nous sommes en plein projet de migration vers Microsoft 365 sur les postes de l'entreprise, soit un parc de 600 à 700 postes. Je participe à ce déploiement.</p>
+              <div class="tools"><span>Microsoft 365</span><span>Windows</span></div>
+            </div>
+          </article>
+          <article class="proj">
+            <div class="img">Capture à ajouter</div>
+            <div class="body">
+              <span class="tag">Support</span>
+              <h4>Gestion des incidents utilisateurs</h4>
+              <p>L'entreprise vient de mettre en place Ivanti, une plateforme de gestion des services informatiques (ITSM) basée sur les bonnes pratiques ITIL, que nous sommes en train de prendre en main. Les utilisateurs y déclarent leurs incidents et leurs demandes, puis le support les qualifie, les priorise, les traite et les clôture. Je gère environ 30 tickets par semaine : diagnostic des pannes et assistance aux utilisateurs.</p>
+              <div class="tools"><span>Ivanti ITSM</span><span>ITIL</span></div>
+            </div>
+          </article>
+          <article class="proj">
+            <div class="img">Capture à ajouter</div>
+            <div class="body">
+              <span class="tag">Annuaire</span>
+              <h4>Gestion des comptes et des accès</h4>
+              <p>Dans l'annuaire Active Directory, je crée les comptes des nouveaux utilisateurs et je leur attribue les droits d'accès dont ils ont besoin (dossiers partagés, applications, groupes). Je gère aussi les modifications de droits et les boîtes de messagerie.</p>
+              <div class="tools"><span>Active Directory</span><span>Exchange / M365</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="proj-group">
+        <h3>En formation — FDME</h3>
+        <div class="projects two">
+          <article class="proj">
+            <div class="img">Capture à ajouter</div>
+            <div class="body">
+              <span class="tag">Identité · en cours</span>
+              <h4>Authentification unique (SSO) avec Keycloak</h4>
+              <p>Dans le projet d'infrastructure commun de la classe, mise en place d'un SSO pour que les utilisateurs s'authentifient une seule fois sur les différents services.</p>
+              <div class="tools"><span>Keycloak</span><span>Annuaire</span></div>
+            </div>
+          </article>
+          <article class="proj">
+            <div class="img">Capture à ajouter</div>
+            <div class="body">
+              <span class="tag">Sécurité · en cours</span>
+              <h4>Détection et réponse aux incidents (EDR) avec Wazuh</h4>
+              <p>Déploiement d'agents Wazuh sur les machines de l'infrastructure pour détecter les comportements suspects et réagir aux incidents.</p>
+              <div class="tools"><span>Wazuh</span><span>Linux</span><span>Windows</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 VEILLE -->
+  <section class="block" id="veille">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">06</span><h2>Veille informationnelle</h2></div>
+      <p class="sec-intro">Thème : la sécurité des postes et des identités en entreprise (Microsoft 365, Windows, authentification). Ce sont les sujets que je traite en alternance et dans mes projets SSO et EDR.</p>
+      <div class="veille-top">
+        <div class="card">
+          <h3>Sources suivies</h3>
+          <ul class="sources">
+            <li><strong>CERT-FR</strong><span>Alertes et avis de sécurité officiels : savoir quelles failles corriger en priorité.</span></li>
+            <li><strong>IT-Connect</strong><span>Actualités et tutoriels en français sur Windows, Microsoft 365 et la sécurité.</span></li>
+            <li><strong>Le Monde Informatique</strong><span>Actualité générale de l'informatique en entreprise.</span></li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Méthode et outils</h3>
+          <ul class="sources">
+            <li><strong>Feedly</strong><span>Agrégateur RSS qui regroupe toutes mes sources au même endroit, pour lire les nouveaux articles sans aller sur chaque site.</span></li>
+            <li><strong>Google Alerts</strong><span>Je reçois un mail dès qu'un article parle de mes mots-clés, comme « Microsoft 365 », « faille Windows » ou « Active Directory ».</span></li>
+            <li><strong>À quoi ça me sert</strong><span>Anticiper les mises à jour à déployer sur le parc et mieux comprendre les menaces que mes projets doivent contrer.</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="articles">
+        <article class="article">
+          <span class="date">15.07.2026</span>
+          <div><h4><a class="link" href="https://www.it-connect.fr/patch-tuesday-juillet-2026-570-failles-de-securite-corrigees-dont-3-zero-day/" target="_blank" rel="noopener">Patch Tuesday de juillet : 570 failles corrigées, dont 3 zero-day ↗</a></h4><p>IT-Connect · Microsoft publie sa plus grosse vague de correctifs. Deux failles déjà exploitées touchent AD FS et SharePoint, et Active Directory et Windows Server font partie des produits les plus concernés.</p><p><b>Lien avec mon travail :</b> je gère des comptes Active Directory et des postes Windows. Ces mises à jour doivent être déployées vite sur tout le parc.</p></div>
+        </article>
+        <article class="article">
+          <span class="date">Août 2026</span>
+          <div><h4><a class="link" href="https://www.maire-info.com/un-ete-2026-marque-par-les-vols-de-donnees-et-les-cyberattaques-article2-31026" target="_blank" rel="noopener">Cyberattaque contre la DGFiP (impôts) ↗</a></h4><p>Maire-info · Des pirates ont utilisé des identifiants volés d'agents pour accéder aux données d'environ 680 000 particuliers et professionnels. Le Premier ministre a réuni une cellule de crise.</p><p><b>Lien avec mon travail :</b> l'attaque passe par des identifiants volés, ce qui montre l'importance de la gestion des identités, de la double authentification et du SSO, le sujet de mon projet.</p></div>
+        </article>
+        <article class="article">
+          <span class="date">Fin juillet 2026</span>
+          <div><h4><a class="link" href="https://www.maire-info.com/un-ete-2026-marque-par-les-vols-de-donnees-et-les-cyberattaques-article2-31026" target="_blank" rel="noopener">Intrusion dans le système de l'Éducation nationale ↗</a></h4><p>Maire-info · Une intrusion concerne environ 1,22 million d'élèves et des milliers de personnels. Tous les accès ont dû être réinitialisés et la rentrée a été perturbée, certaines académies travaillant sans messagerie.</p><p><b>Pourquoi elle m'a marquée :</b> une seule intrusion a bloqué le travail de milliers de personnes. Détecter vite ce type d'attaque, c'est le rôle d'un EDR comme Wazuh, que je mets en place en formation.</p></div>
+        </article>
+      </div>
+      <div class="card" style="margin-top:24px"><h3 style="font-size:1.1rem;margin-bottom:8px">Conclusion</h3><p style="max-width:65ch">Cette veille m'aide à rester à jour dans un domaine qui évolue très vite. En entreprise, elle me permet de savoir quelles mises à jour sont urgentes et de mieux comprendre les risques qui pèsent sur les postes et les comptes que je gère. Elle nourrit aussi mes projets en formation : les attaques par vol d'identifiants montrent l'intérêt du SSO, et les intrusions récentes celui d'un EDR. Enfin, elle me prépare à la suite de mon parcours, puisque je souhaite me spécialiser en cybersécurité.</p></div>
+    </div>
+  </section>
+
+  <!-- 07 CONTACT -->
+  <section class="block" id="contact">
+    <div class="wrap">
+      <div class="sec-head"><span class="sec-num">07</span><h2>Contact</h2></div>
+      <div class="contact">
+        <div class="card">
+          <div class="label">Email</div>
+          <div class="val" id="mail">lyna.chalabi2@gmail.com</div>
+          <button class="copy" id="copyBtn" type="button">Copier l'adresse</button>
+        </div>
+        <div class="card">
+          <div class="label">Localisation</div>
+          <div class="val">Essonne (91), France</div>
+          <div class="btns" style="margin-top:12px"><a class="btn ghost" href="assets/CV_Lyna_Chalabi.pdf" target="_blank" rel="noopener">Télécharger mon CV</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Lyna Chalabi — Portfolio BTS SIO SISR</span>
+    <a href="#accueil">Retour en haut ↑</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var btn=document.getElementById('menuBtn'),menu=document.getElementById('menu');
+  btn.addEventListener('click',function(){var o=menu.classList.toggle('open');btn.setAttribute('aria-expanded',o)});
+  menu.addEventListener('click',function(e){if(e.target.tagName==='A'){menu.classList.remove('open');btn.setAttribute('aria-expanded','false')}});
+  var c=document.getElementById('copyBtn');
+  c.addEventListener('click',function(){
+    var t=document.getElementById('mail').textContent;
+    var done=function(){c.textContent='Adresse copiée';setTimeout(function(){c.textContent="Copier l'adresse"},2000)};
+    var fallback=function(){var r=document.createRange();r.selectNodeContents(document.getElementById('mail'));var s=getSelection();s.removeAllRanges();s.addRange(r)};
+    if(navigator.clipboard){navigator.clipboard.writeText(t).then(done,fallback)}else{fallback()}
+  });
+})();
+</script>
+
+</body></html>
