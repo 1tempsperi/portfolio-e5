@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Gestion des comptes et des accès — Portfolio Lyna Chalabi</title>
+<meta name="description" content="Création des comptes des nouveaux utilisateurs dans Active Directory et attribution des droits d&#x27;accès dont ils ont besoin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="projet.css">
+</head>
+<body>
+<header>
+  <nav class="wrap nav" aria-label="Navigation">
+    <a href="../index.html" class="brand">Lyna <span>Chalabi</span></a>
+    <a href="../index.html#projets" class="back">← Tous les projets</a>
+  </nav>
+</header>
+<main class="wrap">
+  <div class="hero">
+    <p class="tag">Entreprise · Intersport</p>
+    <h1>Gestion des comptes et des accès</h1>
+    <p class="lead">Création des comptes des nouveaux utilisateurs dans Active Directory et attribution des droits d&#x27;accès dont ils ont besoin.</p>
+    <dl class="meta">
+      <div><dt>Cadre</dt><dd>Alternance — DSI Intersport</dd></div>
+      <div><dt>Annuaire</dt><dd>Active Directory</dd></div>
+      <div><dt>Statut</dt><dd>Tâche régulière</dd></div>
+    </dl>
+  </div>
+
+  <section>
+    <h2>Contexte</h2>
+    <p>À chaque arrivée ou changement de poste, un collaborateur a besoin d&#x27;un compte et d&#x27;accès adaptés à son travail : dossiers partagés, applications, messagerie.</p>
+    <p>Bien gérer ces accès est aussi une question de sécurité : chacun ne doit avoir accès qu&#x27;à ce dont il a besoin.</p>
+  </section>
+
+  <section>
+    <h2>Objectifs</h2>
+    <ul class="list">
+      <li>Créer des comptes conformes aux règles de l&#x27;entreprise</li>
+      <li>Donner à chaque utilisateur les bons droits, ni plus ni moins</li>
+      <li>Mettre à jour les accès lors des changements de poste</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Étapes de réalisation</h2>
+    <ol class="steps">
+      <li><strong>Réception de la demande</strong>Récupération des informations sur le nouvel utilisateur : service, poste, accès nécessaires.</li>
+      <li><strong>Création du compte</strong>Création du compte dans Active Directory, dans la bonne unité d&#x27;organisation.</li>
+      <li><strong>Attribution des droits</strong>Ajout aux groupes qui donnent accès aux dossiers partagés et aux applications.</li>
+      <li><strong>Messagerie et vérification</strong>Mise en place de la boîte de messagerie et vérification que l&#x27;utilisateur peut se connecter.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Outils et technologies</h2>
+    <div class="tools"><span>Active Directory</span><span>Windows Server</span><span>Exchange / Microsoft 365</span></div>
+  </section>
+
+  <section>
+    <h2>Captures</h2>
+    <p class="conf">🔒 Les captures sont anonymisées : aucune adresse IP, aucun nom d'utilisateur ni mot de passe n'est visible. Cliquez sur une image pour l'agrandir.</p>
+    <div class="gallery">
+        <figure><img src="img/comptes-acces-1.png" alt="Console Active Directory (anonymisée)" loading="lazy"><figcaption>Console Active Directory (anonymisée)</figcaption></figure>
+        <figure><img src="img/comptes-acces-2.png" alt="Propriétés d&#x27;un compte et groupes (anonymisés)" loading="lazy"><figcaption>Propriétés d&#x27;un compte et groupes (anonymisés)</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Bilan</h2>
+    <p>Cette mission m&#x27;a permis de bien comprendre le fonctionnement d&#x27;un annuaire en entreprise et l&#x27;importance de la gestion des droits pour la sécurité.</p>
+  </section>
+
+  <section>
+    <h2>Compétences mobilisées</h2>
+    <div class="skills">
+      <div><small>Bloc 1</small>Gérer le patrimoine informatique</div>
+      <div><small>Bloc 3</small>Préserver l&#x27;identité numérique de l&#x27;organisation</div>
+      <div><small>Bloc 3</small>Sécuriser les équipements et les usages des utilisateurs</div>
+    </div>
+  </section>
+
+  <nav class="pager" aria-label="Autres projets">
+    <a href="gestion-incidents.html"><span>Projet précédent</span>← Gestion des incidents utilisateurs</a>
+    <a href="sso-keycloak.html" style="text-align:right"><span>Projet suivant</span>Authentification unique (SSO) avec Keycloak →</a>
+  </nav>
+</main>
+<footer><div class="wrap">© 2026 Lyna Chalabi — Portfolio BTS SIO SISR</div></footer>
+<script src="projet.js"></script>
+</body>
+</html>

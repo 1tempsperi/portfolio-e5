@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Authentification unique (SSO) avec Keycloak — Portfolio Lyna Chalabi</title>
+<meta name="description" content="Mise en place d&#x27;une authentification unique dans le projet d&#x27;infrastructure commun de la classe : les utilisateurs se connectent une seule fois pour accéder à tous les services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="projet.css">
+</head>
+<body>
+<header>
+  <nav class="wrap nav" aria-label="Navigation">
+    <a href="../index.html" class="brand">Lyna <span>Chalabi</span></a>
+    <a href="../index.html#projets" class="back">← Tous les projets</a>
+  </nav>
+</header>
+<main class="wrap">
+  <div class="hero">
+    <p class="tag">Formation · FDME · en cours</p>
+    <h1>Authentification unique (SSO) avec Keycloak</h1>
+    <p class="lead">Mise en place d&#x27;une authentification unique dans le projet d&#x27;infrastructure commun de la classe : les utilisateurs se connectent une seule fois pour accéder à tous les services.</p>
+    <dl class="meta">
+      <div><dt>Cadre</dt><dd>Projet de formation — FDME</dd></div>
+      <div><dt>Année</dt><dd>2026 – 2027</dd></div>
+      <div><dt>Statut</dt><dd>En cours</dd></div>
+    </dl>
+  </div>
+
+  <section>
+    <h2>Contexte</h2>
+    <p>Dans une entreprise, les utilisateurs accèdent à de nombreux services. Avec un identifiant différent pour chacun, ils réutilisent souvent les mêmes mots de passe, ce qui est risqué.</p>
+    <p>Le SSO (Single Sign-On) règle ce problème : une seule authentification donne accès à tous les services. Ce projet fait partie de l&#x27;infrastructure commune réalisée par la classe.</p>
+  </section>
+
+  <section>
+    <h2>Objectifs</h2>
+    <ul class="list">
+      <li>Installer et configurer Keycloak comme serveur d&#x27;identité</li>
+      <li>Relier Keycloak à l&#x27;annuaire des utilisateurs</li>
+      <li>Connecter les services de l&#x27;infrastructure au SSO</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Étapes de réalisation</h2>
+    <ol class="steps">
+      <li><strong>Étude</strong>Comprendre le fonctionnement du SSO et des protocoles utilisés (OpenID Connect, SAML).</li>
+      <li><strong>Installation de Keycloak</strong>Mise en place du serveur Keycloak et création d&#x27;un espace (realm) pour l&#x27;infrastructure.</li>
+      <li><strong>Liaison avec l&#x27;annuaire</strong>Connexion de Keycloak à l&#x27;annuaire pour utiliser les comptes existants.</li>
+      <li><strong>Connexion des services</strong>Configuration des applications pour qu&#x27;elles délèguent l&#x27;authentification à Keycloak, puis tests.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Outils et technologies</h2>
+    <div class="tools"><span>Keycloak</span><span>OpenID Connect</span><span>Annuaire LDAP / AD</span><span>Linux</span></div>
+  </section>
+
+  <section>
+    <h2>Captures</h2>
+    <p class="conf">🔒 Les captures sont anonymisées : aucune adresse IP, aucun nom d'utilisateur ni mot de passe n'est visible. Cliquez sur une image pour l'agrandir.</p>
+    <div class="gallery">
+        <figure><img src="img/sso-keycloak-1.png" alt="Console d&#x27;administration Keycloak" loading="lazy"><figcaption>Console d&#x27;administration Keycloak</figcaption></figure>
+        <figure><img src="img/sso-keycloak-2.png" alt="Page de connexion unique" loading="lazy"><figcaption>Page de connexion unique</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>Bilan</h2>
+    <p>Projet en cours. Il me permet de travailler sur la gestion des identités, un sujet central en cybersécurité, comme le montre ma veille sur les attaques par vol d&#x27;identifiants.</p>
+  </section>
+
+  <section>
+    <h2>Compétences mobilisées</h2>
+    <div class="skills">
+      <div><small>Bloc 2</small>Installer, tester et déployer une solution d&#x27;infrastructure réseau</div>
+      <div><small>Bloc 3</small>Préserver l&#x27;identité numérique de l&#x27;organisation</div>
+      <div><small>Bloc 1</small>Travailler en mode projet</div>
+    </div>
+  </section>
+
+  <nav class="pager" aria-label="Autres projets">
+    <a href="comptes-acces.html"><span>Projet précédent</span>← Gestion des comptes et des accès</a>
+    <a href="edr-wazuh.html" style="text-align:right"><span>Projet suivant</span>Détection et réponse aux incidents (EDR) avec Wazuh →</a>
+  </nav>
+</main>
+<footer><div class="wrap">© 2026 Lyna Chalabi — Portfolio BTS SIO SISR</div></footer>
+<script src="projet.js"></script>
+</body>
+</html>
